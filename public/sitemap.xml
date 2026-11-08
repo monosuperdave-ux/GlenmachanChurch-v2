@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- List of the site's pages for search engines. When you add a new page, add a <url> line for it here. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://glenmachanchurch.org/</loc></url>
+  <url><loc>https://glenmachanchurch.org/plan-your-visit</loc></url>
+  <url><loc>https://glenmachanchurch.org/about</loc></url>
+  <url><loc>https://glenmachanchurch.org/church-life</loc></url>
+  <url><loc>https://glenmachanchurch.org/sermons</loc></url>
+  <url><loc>https://glenmachanchurch.org/family-care-in-cancer</loc></url>
+  <url><loc>https://glenmachanchurch.org/privacy</loc></url>
+</urlset>

@@ -18,6 +18,8 @@ export type Group = {
   description: string;
   sections?: { name: string; detail: string }[];
   link?: { label: string; to: string };
+  // A second group shown inside the same card, under a dividing line (e.g. Youth Church under Sunday School)
+  alsoHere?: Omit<Group, 'category' | 'confirmed' | 'alsoHere'>;
   confirmed: boolean;
 };
 
@@ -74,6 +76,12 @@ export const groups: Group[] = [
     who: 'Pre-school to Year 7',
     when: 'Sundays during the 11:00am service',
     description: 'A safe, age-appropriate place where the Bible is taught in a creative and relevant way.',
+    alsoHere: {
+      name: 'Youth Church',
+      who: 'Year 8 and above',
+      when: 'Sundays during the 11:00am service',
+      description: 'Our youth team leads its own service with singing, a Bible lesson and small-group time.',
+    },
     confirmed: true,
   },
 
@@ -113,14 +121,7 @@ export const groups: Group[] = [
 
 
   // ── Young People ──────────────────────────────────────────
-  {
-    name: 'Youth Church',
-    category: 'youth',
-    who: 'Year 8 and above',
-    when: 'Sundays during the 11:00am service',
-    description: 'Our youth team leads its own service with singing, a Bible lesson and small-group time.',
-    confirmed: true,
-  },
+  // (Youth Church is shown inside the Sunday School card above)
   {
     name: 'Access Youth',
     category: 'youth',

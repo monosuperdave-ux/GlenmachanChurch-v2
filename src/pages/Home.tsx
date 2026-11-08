@@ -27,7 +27,7 @@ const activities: { title: string; categories: CategoryId[]; link: string; tone:
   { title: 'Women, Men & Seniors', categories: ['women', 'men', 'seniors'], link: '/church-life#women', tone: 'orange' },
   { title: 'Prayer & Support', categories: ['prayer', 'support'], link: '/church-life#prayer', tone: 'slate' },
 ];
-const namesFor = (cats: CategoryId[]) => groups.filter((g) => cats.includes(g.category)).map((g) => g.name).join(' · ');
+const namesFor = (cats: CategoryId[]) => groups.filter((g) => cats.includes(g.category)).flatMap((g) => (g.alsoHere ? [g.name, g.alsoHere.name] : [g.name])).join(' · ');
 
 export default function Home() {
   // Loads the Elfsight platform script (once) for the Facebook feed widget

@@ -24,6 +24,17 @@ function GroupCard({ group }: { group: Group }) {
         </dl>
       )}
       {group.link && <Link className="text-link" to={group.link.to}>{group.link.label} <ArrowRight size={17} /></Link>}
+      {group.alsoHere && (
+        <div className="group-also">
+          <h3>{group.alsoHere.name}</h3>
+          <ul className="group-facts">
+            {group.alsoHere.who && <li><Users size={15} /> {group.alsoHere.who}</li>}
+            {group.alsoHere.when && <li><CalendarDays size={15} /> {group.alsoHere.when}</li>}
+            {group.alsoHere.where && <li><MapPin size={15} /> {group.alsoHere.where}</li>}
+          </ul>
+          <p>{group.alsoHere.description}</p>
+        </div>
+      )}
     </article>
   );
 }
