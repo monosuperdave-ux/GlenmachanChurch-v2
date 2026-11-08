@@ -5,17 +5,16 @@
 // church office. It does NOT save anything: no database, no files, no logs
 // of the message content. Once the email is sent, the website forgets it.
 //
-// Needs setting up once in Cloudflare (we'll do this together):
-//   CONTACT_EMAIL  – an email-sending binding whose destination is the
-//                    church office inbox (a verified address)
-//   FROM_ADDRESS   – e.g. website@glenmachanchurch.org
+// Cloudflare Pages can't send email itself, so this passes the message to
+// the small "glenmachan-mailer" Worker (in the mailer/ folder), which does.
+// Set up once in Cloudflare: Pages project → Settings → Bindings →
+//   Service binding, name MAILER, pointing to the glenmachan-mailer Worker.
 // Until then it replies "not set up", and the form offers the visitor
 // an "open in my email" button instead.
 // ─────────────────────────────────────────────────────────────
 
 interface Env {
-  CONTACT_EMAIL?: { send: (msg: Record<string, unknown>) => Promise<unknown> };
-  FROM_ADDRESS?: string;
+  MAILER?: { fetch: (input: string, init?: RequestInit) => Promise<Response> };
 }
 
 const REASONS = [
@@ -56,7 +55,7 @@ export const onRequestPost = async ({ request, env }: { request: Request; env: E
     return json({ ok: false, error: 'missing-fields' }, 400);
   }
 
-  if (!env.CONTACT_EMAIL || !env.FROM_ADDRESS) return json({ ok: false, error: 'not-set-up' }, 503);
+  if (!env.MAILER) return json({ ok: false, error: 'not-set-up' }, 503);
 
   const isPrayer = reason === 'Prayer request';
   const text = [
@@ -80,12 +79,13 @@ export const onRequestPost = async ({ request, env }: { request: Request; env: E
     .join('\n');
 
   try {
-    await env.CONTACT_EMAIL.send({
-      from: env.FROM_ADDRESS,
-      subject: `Website: ${reason} – ${name}`,
-      text,
-      replyTo: email,
+    const res = await env.MAILER.fetch('https://mailer/send', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ subject: `Website: ${reason} – ${name}`, text, replyTo: email }),
     });
+    const result = (await res.json().catch(() => null)) as { ok?: boolean } | null;
+    if (!res.ok || !result?.ok) return json({ ok: false, error: 'send-failed' }, 502);
     return json({ ok: true });
   } catch {
     return json({ ok: false, error: 'send-failed' }, 502);

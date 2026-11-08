@@ -1,0 +1,28 @@
+// ─────────────────────────────────────────────────────────────
+// Glenmachan mailer: a tiny Cloudflare Worker that emails contact-form
+// messages to the church office. Cloudflare Pages can't send email itself,
+// so the website's /api/contact function passes each message here.
+//
+// It has no public web address (workers_dev is off), so only the website
+// can use it, and it can only ever email the one address below.
+//
+// Deploy from this folder with:  npx wrangler deploy
+// ─────────────────────────────────────────────────────────────
+{
+  "name": "glenmachan-mailer",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-01",
+  "workers_dev": false,
+  "preview_urls": false,
+  "send_email": [
+    {
+      "name": "EMAIL",
+      // The church office inbox. It must be a verified destination address
+      // in Cloudflare Email Routing for glenmachanchurch.org.
+      "destination_address": "glenmachanchurch@outlook.com"
+    }
+  ],
+  "vars": {
+    "FROM_ADDRESS": "website@glenmachanchurch.org"
+  }
+}
