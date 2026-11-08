@@ -1,3 +1,10 @@
 /*
   X-Frame-Options: ALLOWALL
   Content-Security-Policy: frame-src 'self' https://www.facebook.com https://*.facebook.com https://www.youtube-nocookie.com https://www.youtube.com https://www.google.com;
+
+# Keep the Cloudflare preview copies (*.pages.dev) out of Google, so only glenmachanchurch.org is listed
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
+
+https://:version.:project.pages.dev/*
+  X-Robots-Tag: noindex
