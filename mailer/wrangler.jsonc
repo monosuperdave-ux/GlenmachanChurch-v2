@@ -1,11 +1,14 @@
 // ─────────────────────────────────────────────────────────────
 // Glenmachan mailer: a tiny Cloudflare Worker that emails contact-form
-// messages to the church office. Cloudflare Pages can't send email itself,
-// so the website's /api/contact function passes each message here.
+// messages to the church office. The website's /api/contact function
+// passes each message here, and this sends it using Resend (free plan:
+// 3,000 emails a month, 100 a day), which Outlook trusts.
 //
 // It has no public web address (workers_dev is off), so only the website
-// can use it, and it can only ever email the one address below.
+// can use it, and it only ever emails the TO_ADDRESS below.
 //
+// The Resend key is a secret, kept in Cloudflare, never in this file. Set it with:
+//   npx wrangler secret put RESEND_API_KEY
 // Deploy from this folder with:  npx wrangler deploy
 // ─────────────────────────────────────────────────────────────
 {
@@ -14,15 +17,10 @@
   "compatibility_date": "2026-10-01",
   "workers_dev": false,
   "preview_urls": false,
-  "send_email": [
-    {
-      "name": "EMAIL",
-      // The church office inbox. It must be a verified destination address
-      // in Cloudflare Email Routing for glenmachanchurch.org.
-      "destination_address": "glenmachanchurch@outlook.com"
-    }
-  ],
   "vars": {
-    "FROM_ADDRESS": "website@glenmachanchurch.org"
+    // Must be on glenmachanchurch.org, which is verified in Resend
+    "FROM_ADDRESS": "Glenmachan Church website <website@glenmachanchurch.org>",
+    // The church office inbox
+    "TO_ADDRESS": "glenmachanchurch@outlook.com"
   }
 }
