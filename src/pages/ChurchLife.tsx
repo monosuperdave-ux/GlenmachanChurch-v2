@@ -15,6 +15,7 @@ function GroupCard({ group }: { group: Group }) {
         {group.when && <li><CalendarDays size={15} /> {group.when}</li>}
         {group.where && <li><MapPin size={15} /> {group.where}</li>}
       </ul>
+      {group.quote && <blockquote className="group-quote">{group.quote}</blockquote>}
       <p>{group.description}</p>
       {group.sections && (
         <dl className="group-sections">

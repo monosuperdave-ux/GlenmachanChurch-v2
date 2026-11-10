@@ -15,6 +15,7 @@ export type Group = {
   who?: string;
   when?: string;
   where?: string;
+  quote?: string; // a short Bible verse or saying, shown in italics under the details
   description: string;
   sections?: { name: string; detail: string }[];
   link?: { label: string; to: string };
@@ -149,9 +150,16 @@ export const groups: Group[] = [
     category: 'men',
     who: '“The youth club for the older man!” Men of all ages',
     when: 'Third Friday of every month, 8:00pm',
-    where: 'Minor Youth Hall',
+    where: 'Minor Youth Halls',
+    quote: '“As iron sharpens iron, so one man sharpens another.” Proverbs 27:17',
     description:
-      'Adelphos means “brethren in Christ”. A relaxed, friendly and welcoming place for men of all ages to meet and fellowship together.',
+      'Adelphos means “brethren in Christ”. Gents, if your idea of a big Friday night is out-bowling your mates, sinking a few (pool balls, relax) and drinking enough tea to alarm your GP, this is your night. No membership card, no dress code, and nobody checks your handicap.',
+    sections: [
+      { name: 'On the menu', detail: 'Hot dogs, sausage rolls, and as many cups of tea or coffee as your heart can handle' },
+      { name: 'On the games list', detail: 'Indoor bowls, pool, snooker and table tennis, or the quiet corner for a bit of “tactical reflection”' },
+      { name: 'Donation', detail: 'There’s a collection box on the night with a suggested £2, or whatever’s in your pocket (we’re not HMRC).' },
+      { name: 'Bring', detail: 'Your mate who “doesn’t do church stuff”, your dad who still thinks he’s unbeatable, or your son. Just don’t bring excuses.' },
+    ],
     confirmed: true,
   },
   {
