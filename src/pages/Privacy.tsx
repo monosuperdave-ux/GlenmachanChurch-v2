@@ -30,6 +30,7 @@ export default function Privacy() {
           <ul>
             <li><strong>Why we use it:</strong> to reply to you and, for prayer requests, to pray for you. We use it only because you have agreed to this when sending the form.</li>
             <li><strong>Where it goes:</strong> your message is sent by email to the Church Office inbox. It is not saved on this website or in any website database.</li>
+            <li><strong>Who sends the email:</strong> we use an email service called Resend to deliver the message to our inbox. Resend keeps a copy of each email for up to 30 days, so delivery problems can be checked, and then deletes it. See the <a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noreferrer">Resend privacy policy</a>.</li>
             <li><strong>Who sees it:</strong> church office staff and our pastors. For prayer requests, our church prayer team sees it only if you choose that option on the form.</li>
             <li><strong>How long we keep it:</strong> only as long as we need to deal with your message. We then delete the email.</li>
             <li><strong>What we never do:</strong> we never add you to a mailing list, and we never sell or pass on your details.</li>
@@ -41,11 +42,11 @@ export default function Privacy() {
           <ul>
             <li>YouTube videos (we use YouTube’s privacy-enhanced mode): <a href="https://policies.google.com/privacy" target="_blank" rel="noreferrer">Google privacy policy</a></li>
             <li>Google Maps: <a href="https://policies.google.com/privacy" target="_blank" rel="noreferrer">Google privacy policy</a></li>
-            <li>Facebook posts: <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noreferrer">Meta privacy policy</a></li>
+            <li>Facebook posts on our homepage, shown using a service called Elfsight: <a href="https://elfsight.com/privacy-policy/" target="_blank" rel="noreferrer">Elfsight privacy policy</a> and <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noreferrer">Meta privacy policy</a></li>
           </ul>
 
           <h2>Hosting</h2>
-          <p>This website is hosted by Cloudflare, which processes basic technical information (such as IP addresses) to deliver the site and protect it from attacks. See the <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noreferrer">Cloudflare privacy policy</a>.</p>
+          <p>This website is hosted by Cloudflare, which processes basic technical information (such as IP addresses) to deliver the site and protect it from attacks. Messages from the contact form also pass through Cloudflare on their way to Resend, but Cloudflare does not keep them. See the <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noreferrer">Cloudflare privacy policy</a>.</p>
 
           <h2>Managing cookies</h2>
           <p>You can block or delete cookies in your browser’s settings. The site will still work, although some videos, maps or Facebook posts may not show.</p>
