@@ -163,11 +163,21 @@ export const groups: Group[] = [
     confirmed: true,
   },
   {
-    name: 'Men’s Breakfast',
+    name: 'Men’s Breakfast & Bible Study',
     category: 'men',
-    when: 'First Saturday of the month, 9:30am – 11:30am',
+    who: 'Adult men, whatever your church background',
+    when: 'First Saturday of the month, 9:30am – 11:30am (September to June)',
     where: 'Coffee bar',
-    description: 'Breakfast and fellowship together. All men are welcome.',
+    quote: '“And let us consider how we may spur one another on toward love and good deeds.” Hebrews 10:24',
+    description:
+      'A fry, a hot cup of tea and an open Bible. There are worse ways to start a Saturday. We eat first (priorities), then open God’s Word together and talk it through. Come hungry, bring your questions, and leave encouraged.',
+    sections: [
+      { name: 'On the menu', detail: 'A fry or sausage baps, with tea and coffee' },
+      { name: 'The Bible study', detail: 'Led by one or two men from the church, working through a chapter or a few verses as part of a theme for the session' },
+      { name: 'The chat', detail: 'Afterwards we talk about what we’ve read: exploring, questioning and encouraging each other' },
+      { name: 'Cost', detail: 'Free. If you can afford it, a donation towards the food is appreciated' },
+      { name: 'Booking', detail: 'No need to book, just turn up. Or contact the church office for more information' },
+    ],
     confirmed: true,
   },
 
