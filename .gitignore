@@ -21,3 +21,6 @@ dist-ssr
 *.sln
 *.sw?
 .env
+
+# Downloads and files from Claude chats (kept on this PC, not uploaded)
+Claude outputs/
