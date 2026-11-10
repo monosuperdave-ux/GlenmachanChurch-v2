@@ -212,9 +212,12 @@ export const groups: Group[] = [
   {
     name: 'Say Their Name',
     category: 'support',
-    who: 'Bereavement support group',
-    description: '[TEXT NEEDED: who it is for, when and where it meets, and who to contact]',
-    confirmed: false,
+    who: 'Anyone who has been bereaved',
+    when: 'First Monday of every month, 7:30pm',
+    where: 'Tim Hortons, Connswater, Belfast BT5 5DL',
+    description: 'A safe space to have a cuppa and a chat with people who understand. A friendly group with a listening ear.',
+    link: { label: 'Find out more', to: '/say-their-name' },
+    confirmed: true,
   },
 ];
 

@@ -151,3 +151,9 @@ a.activity-card:hover { border-color:var(--blue); transform:translateX(4px); }
 .legal ul { padding-left:20px; margin:8px 0 0; }
 .legal a { color:var(--blue-dark); text-decoration:underline; }
 .legal .updated { font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; margin:0; }
+
+/* Say Their Name: welcome panel in place of a logo */
+.feature-quote { background:var(--navy); color:#fff; padding:44px 40px; border-radius:12px; box-shadow:0 15px 25px rgba(20,37,52,.12); }
+.feature-quote .feature-quote-icon { width:52px; height:52px; border-radius:50%; display:grid; place-items:center; background:rgba(255,255,255,.12); color:#f8b54d; }
+.feature-quote p { font-family:'Playfair Display', serif; font-size:clamp(22px, 2.4vw, 28px); line-height:1.4; margin-top:22px; }
+.feature-quote span { display:block; margin-top:18px; font-size:12px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.7); }
