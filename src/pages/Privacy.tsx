@@ -20,7 +20,7 @@ export default function Privacy() {
           <p className="updated">Last updated: November 2026</p>
 
           <h2>Who we are</h2>
-          <p>This website is run by {church.name}, Glenmachan Road, Belfast, BT4 2NL. For any question about your information, contact the Church Office at <a href={`mailto:${church.email}`}>{church.email}</a> or {church.phone}.</p>
+          <p>This website is run by {church.name}, a registered charity in Northern Ireland (charity number {church.charityNumber}), Glenmachan Road, Belfast, BT4 2NL. For any question about your information, contact the Church Office at <a href={`mailto:${church.email}`}>{church.email}</a> or {church.phone}.</p>
 
           <h2>Visiting the website</h2>
           <p>We do not ask you to create an account, we do not run analytics or advertising trackers, and we do not set cookies of our own.</p>

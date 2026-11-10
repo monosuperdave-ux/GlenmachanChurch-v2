@@ -82,7 +82,7 @@ export default function Layout() {
             </ul>
           </div>
         </div>
-        <div className="container footer-bottom"><span>© {new Date().getFullYear()} Glenmachan Church</span><span>Built on hope · Rooted in community</span></div>
+        <div className="container footer-bottom"><span>© {new Date().getFullYear()} {church.name} · Charity No. {church.charityNumber}</span><span>Built on hope · Rooted in community</span></div>
       </footer>
     </div>
   );

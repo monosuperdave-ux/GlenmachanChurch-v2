@@ -2,6 +2,7 @@
 
 export const church = {
   name: 'Church of God, Glenmachan',
+  charityNumber: 'NIC 108331',
   addressLines: ['Glenmachan Road', 'Belfast · BT4 2NL'],
   phone: '028 9076 1676',
   phoneLink: 'tel:02890761676',
