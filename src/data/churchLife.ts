@@ -145,12 +145,20 @@ export const groups: Group[] = [
 
   // ── Women ─────────────────────────────────────────────────
   {
-    name: 'GEMS Ladies Bible Study',
+    name: 'GEMS Ladies Fellowship',
     category: 'women',
+    who: 'All women welcome',
     when: 'Third Monday of every month, 7:30pm',
     where: 'Coffee bar',
+    quote: '“You are the light of the world. A town built on a hill cannot be hidden.” Matthew 5:14',
     description:
-      'We love coming together to explore God’s mighty word, discovering who we are in Christ and who we are together.',
+      'Just like real gems, every woman is created in the image of our Father: unique, beautiful, precious and treasured. At GEMS we plug into the power source together, so we can reflect His love, His beauty and His glory to everyone around us. A place where ordinary women can know their extraordinary God.',
+    sections: [
+      { name: 'Bible study', detail: 'Studying His Word and being reminded of who we are in God, individually and together' },
+      { name: 'Prayer', detail: 'Praying for each other, believing God hears and answers, and expecting the miraculous' },
+      { name: 'Passing it on', detail: 'Sharing Christ with others and pouring into the next generation, just as Paul mentored young Timothy' },
+      { name: 'Friendship', detail: 'Laughing together, crying together, and just being real as we share with each other' },
+    ],
     confirmed: true,
   },
 
