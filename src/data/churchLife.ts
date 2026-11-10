@@ -126,10 +126,20 @@ export const groups: Group[] = [
   {
     name: 'Access Youth',
     category: 'youth',
-    who: 'Year 8 to Year 14',
-    when: '1st and 3rd Saturday of the month, 7:30pm – 9:30pm (term time)',
+    who: 'P6 to Year 14',
+    when: '1st and 3rd Saturday of the month, 7:30pm – 9:30pm (term time, September to June)',
     where: 'Minor Youth Halls',
-    description: 'Access exists to offer young people a place to come and grow together in their knowledge of Christ.',
+    quote: '“Don’t let anyone look down on you because you are young…” 1 Timothy 4:12',
+    description:
+      'Two Saturday nights a month, the Minor Youth Halls get loud. Access is our youth club: a safe, friendly place to burn off some energy, hang out with your friends and make new ones. Whether you live for a last-minute winner or you’d rather quietly destroy your mates at a board game, there’s a spot for you. Leave the homework at home.',
+    sections: [
+      { name: 'Sport', detail: 'Football, hockey and badminton' },
+      { name: 'Games', detail: 'Table tennis, foosball and gaming consoles' },
+      { name: 'Chill-out', detail: 'Quieter areas to chat or play board games' },
+      { name: 'Tuck shop', detail: 'Of course! Bring a bit of pocket money' },
+      { name: 'Entry', detail: 'Free' },
+      { name: 'For parents', detail: 'All our leaders are Access NI checked and trained in the church’s safeguarding. Contact the church office with any questions' },
+    ],
     confirmed: true,
   },
 
