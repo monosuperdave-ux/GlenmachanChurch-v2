@@ -255,6 +255,17 @@ export const groups: Group[] = [
     link: { label: 'Find out more', to: '/say-their-name' },
     confirmed: true,
   },
+  {
+    name: 'SONshine Club',
+    category: 'support',
+    who: 'Children in great need',
+    when: 'Started at Glenmachan in 2000',
+    where: 'Tharaka, Kenya',
+    description:
+      'What began as a summer Bible club became a mission to Kenya. Child sponsorship, clean water and a training farm, helping children in great need to thrive.',
+    link: { label: 'Find out more', to: '/sonshine-club' },
+    confirmed: true,
+  },
 ];
 
 export const groupsIn = (category: CategoryId) => groups.filter((g) => g.category === category);

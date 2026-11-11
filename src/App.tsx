@@ -8,6 +8,7 @@ import FamilyCareInCancer from './pages/FamilyCareInCancer';
 import Sermons from './pages/Sermons';
 import Privacy from './pages/Privacy';
 import SayTheirName from './pages/SayTheirName';
+import SonshineClub from './pages/SonshineClub';
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
           <Route path="sermons" element={<Sermons />} />
           <Route path="privacy" element={<Privacy />} />
           <Route path="say-their-name" element={<SayTheirName />} />
+          <Route path="sonshine-club" element={<SonshineClub />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
