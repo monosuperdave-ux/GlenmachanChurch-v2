@@ -25,7 +25,8 @@ import { promo, promoIsLive } from '@/data/promo';
 const activities: { title: string; categories: CategoryId[]; link: string; tone: string }[] = [
   { title: 'Children & Youth', categories: ['children', 'youth'], link: '/church-life#children', tone: 'blue' },
   { title: 'Women, Men & Seniors', categories: ['women', 'men', 'seniors'], link: '/church-life#women', tone: 'orange' },
-  { title: 'Prayer & Support', categories: ['prayer', 'support'], link: '/church-life#prayer', tone: 'slate' },
+  { title: 'Prayer', categories: ['prayer'], link: '/church-life#prayer', tone: 'slate' },
+  { title: 'Support Ministries', categories: ['support'], link: '/support-ministries', tone: 'blue' },
 ];
 const namesFor = (cats: CategoryId[]) => groups.filter((g) => cats.includes(g.category)).flatMap((g) => (g.alsoHere ? [g.name, g.alsoHere.name] : [g.name])).join(' · ');
 

@@ -8,6 +8,7 @@ const navItems = [
   { label: 'About', to: '/about' },
   { label: 'Sundays', to: '/#services' },
   { label: 'Church Life', to: '/church-life' },
+  { label: 'Support', to: '/support-ministries' },
   { label: 'Sermons', to: '/sermons' },
   { label: 'Contact', to: '/#contact' },
   { label: 'Find Us', to: '/#visit' },
@@ -68,11 +69,8 @@ export default function Layout() {
               <li><Link to="/plan-your-visit">Plan your visit</Link></li>
               <li><Link to="/about">About us</Link></li>
               <li><Link to="/church-life">Church life</Link></li>
+              <li><Link to="/support-ministries">Support ministries</Link></li>
               <li><Link to="/sermons">Sermons</Link></li>
-              <li><Link to="/family-care-in-cancer">Family Care in Cancer</Link></li>
-              <li><Link to="/say-their-name">Say Their Name</Link></li>
-              <li><Link to="/sonshine-club">SONshine Club</Link></li>
-              <li><Link to="/salt">SALT Ministry</Link></li>
               <li><Link to="/privacy">Privacy &amp; cookies</Link></li>
             </ul>
           </div>

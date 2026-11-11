@@ -65,7 +65,8 @@ export const categories: { id: CategoryId; title: string; intro: string; verse?:
   {
     id: 'support',
     title: 'Support Ministries',
-    intro: 'Practical help, care and prayer for people going through the hardest seasons of life.',
+    intro:
+      'From cancer support and bereavement care to food hampers here in East Belfast and mission in Kenya: practical help, care and prayer for people going through the hardest seasons of life.',
   },
 ];
 

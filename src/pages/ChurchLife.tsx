@@ -1,44 +1,11 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, CalendarDays, MapPin, Users } from 'lucide-react';
-import { categories, groupsIn, type Group } from '@/data/churchLife';
+import { ArrowRight, HandHeart } from 'lucide-react';
+import GroupCard from '@/components/GroupCard';
+import { categories, groupsIn } from '@/data/churchLife';
 import { church } from '@/data/church';
 
-function GroupCard({ group }: { group: Group }) {
-  return (
-    <article className="group-card">
-      <div className="group-card-head">
-        <h3>{group.name}</h3>
-        {!group.confirmed && <span className="to-confirm" title="Details still being checked">To confirm</span>}
-      </div>
-      <ul className="group-facts">
-        {group.who && <li><Users size={15} /> {group.who}</li>}
-        {group.when && <li><CalendarDays size={15} /> {group.when}</li>}
-        {group.where && <li><MapPin size={15} /> {group.where}</li>}
-      </ul>
-      {group.quote && <blockquote className="group-quote">{group.quote}</blockquote>}
-      <p>{group.description}</p>
-      {group.sections && (
-        <dl className="group-sections">
-          {group.sections.map((s) => (
-            <div key={s.name}><dt>{s.name}</dt><dd>{s.detail}</dd></div>
-          ))}
-        </dl>
-      )}
-      {group.link && <Link className="text-link" to={group.link.to}>{group.link.label} <ArrowRight size={17} /></Link>}
-      {group.alsoHere && (
-        <div className="group-also">
-          <h3>{group.alsoHere.name}</h3>
-          <ul className="group-facts">
-            {group.alsoHere.who && <li><Users size={15} /> {group.alsoHere.who}</li>}
-            {group.alsoHere.when && <li><CalendarDays size={15} /> {group.alsoHere.when}</li>}
-            {group.alsoHere.where && <li><MapPin size={15} /> {group.alsoHere.where}</li>}
-          </ul>
-          <p>{group.alsoHere.description}</p>
-        </div>
-      )}
-    </article>
-  );
-}
+// Support Ministries has its own page now (src/pages/SupportMinistries.tsx), so it's left out here.
+const lifeCategories = categories.filter((c) => c.id !== 'support');
 
 export default function ChurchLife() {
   return (
@@ -54,11 +21,12 @@ export default function ChurchLife() {
 
       <nav className="jump-nav" aria-label="Jump to a group">
         <div className="container">
-          {categories.map((c) => <a key={c.id} href={`#${c.id}`}>{c.title}</a>)}
+          {lifeCategories.map((c) => <a key={c.id} href={`#${c.id}`}>{c.title}</a>)}
+          <Link to="/support-ministries">Support Ministries</Link>
         </div>
       </nav>
 
-      {categories.map((c, i) => (
+      {lifeCategories.map((c, i) => (
         <section key={c.id} id={c.id} className={i % 2 ? 'page-section alt' : 'page-section'} aria-labelledby={`${c.id}-title`}>
           <div className="container">
             <div className="life-category-head">
@@ -83,6 +51,7 @@ export default function ChurchLife() {
             <a className="button button-dark" href={`mailto:${church.email}`}>Email us <ArrowRight size={16} /></a>
             <a className="button button-outline" href={church.phoneLink}>Call {church.phone}</a>
           </div>
+          <p><Link className="text-link" to="/support-ministries"><HandHeart size={17} /> Looking for help or support? See our support ministries <ArrowRight size={17} /></Link></p>
         </div>
       </section>
     </>

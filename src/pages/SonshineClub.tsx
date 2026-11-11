@@ -78,7 +78,7 @@ export default function SonshineClub() {
 
       <section className="page-cta">
         <div className="container">
-          <Link className="text-link" to="/church-life#support">See all our support ministries <ArrowRight size={17} /></Link>
+          <Link className="text-link" to="/support-ministries">See all our support ministries <ArrowRight size={17} /></Link>
         </div>
       </section>
     </>

@@ -160,3 +160,11 @@ a.activity-card:hover { border-color:var(--blue); transform:translateX(4px); }
 .feature-quote .feature-quote-icon { width:52px; height:52px; border-radius:50%; display:grid; place-items:center; background:rgba(255,255,255,.12); color:#f8b54d; }
 .feature-quote p { font-family:'Playfair Display', serif; font-size:clamp(22px, 2.4vw, 28px); line-height:1.4; margin-top:22px; }
 .feature-quote span { display:block; margin-top:18px; font-size:12px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.7); }
+
+/* Top menu: keep it on one line on small laptops and tablets, just above the phone menu size */
+.main-nav a { white-space:nowrap; }
+@media (min-width: 801px) and (max-width: 980px) {
+  .site-header { padding-left:3%; padding-right:3%; }
+  .main-nav { gap:16px; }
+  .nav-button { padding:10px 13px; }
+}
