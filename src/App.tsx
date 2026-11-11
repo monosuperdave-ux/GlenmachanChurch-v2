@@ -9,6 +9,7 @@ import Sermons from './pages/Sermons';
 import Privacy from './pages/Privacy';
 import SayTheirName from './pages/SayTheirName';
 import SonshineClub from './pages/SonshineClub';
+import Salt from './pages/Salt';
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
           <Route path="privacy" element={<Privacy />} />
           <Route path="say-their-name" element={<SayTheirName />} />
           <Route path="sonshine-club" element={<SonshineClub />} />
+          <Route path="salt" element={<Salt />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>

@@ -72,6 +72,7 @@ export default function Layout() {
               <li><Link to="/family-care-in-cancer">Family Care in Cancer</Link></li>
               <li><Link to="/say-their-name">Say Their Name</Link></li>
               <li><Link to="/sonshine-club">SONshine Club</Link></li>
+              <li><Link to="/salt">SALT Ministry</Link></li>
               <li><Link to="/privacy">Privacy &amp; cookies</Link></li>
             </ul>
           </div>

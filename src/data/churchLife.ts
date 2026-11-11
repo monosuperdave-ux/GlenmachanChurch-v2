@@ -266,6 +266,16 @@ export const groups: Group[] = [
     link: { label: 'Find out more', to: '/sonshine-club' },
     confirmed: true,
   },
+  {
+    name: 'SALT Ministry',
+    category: 'support',
+    who: 'Local families in genuine need',
+    where: 'East Belfast, working with local food banks',
+    description:
+      'Serving All, Labouring Together. Our food hamper and support ministry, delivering food, friendship and support to families referred to us, in complete confidence.',
+    link: { label: 'Find out more', to: '/salt' },
+    confirmed: true,
+  },
 ];
 
 export const groupsIn = (category: CategoryId) => groups.filter((g) => g.category === category);
