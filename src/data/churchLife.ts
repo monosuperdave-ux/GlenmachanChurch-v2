@@ -102,6 +102,7 @@ export const groups: Group[] = [
       { name: 'Seniors', detail: 'Year 8 to Year 10' },
       { name: 'Brigaders', detail: 'Year 11 to Year 14' },
     ],
+    link: { label: 'Find out more about GB', to: '/girls-brigade' },
     confirmed: true,
   },
   {
@@ -118,6 +119,7 @@ export const groups: Group[] = [
       { name: 'Company Section', detail: 'Year 8 to Year 11 · 7:45pm – 9:45pm · Main Youth Hall' },
       { name: 'Senior Section', detail: 'Year 12 to Year 14 · 7:45pm – 9:45pm · Main Youth Hall' },
     ],
+    link: { label: 'Find out more about BB', to: '/boys-brigade' },
     confirmed: true,
   },
 

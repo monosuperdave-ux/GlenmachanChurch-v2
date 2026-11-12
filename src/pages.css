@@ -168,3 +168,16 @@ a.activity-card:hover { border-color:var(--blue); transform:translateX(4px); }
   .main-nav { gap:16px; }
   .nav-button { padding:10px 13px; }
 }
+
+/* Boys' Brigade and Girls' Brigade pages */
+.section-note { color:var(--navy); font-size:14px; font-weight:600; margin-top:18px; }
+.brigade-sections { grid-template-columns:repeat(auto-fit, minmax(170px, 1fr)); margin-top:36px; }
+.brigade-sections > div { background:#fff; border:1px solid var(--line); border-left:3px solid var(--orange); padding:18px 16px; }
+.brigade-sections strong { font-family:'Playfair Display', serif; font-size:19px; }
+.brigade-sections p { color:var(--slate); line-height:1.6; }
+.values-list { grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); }
+.welcome-note .values-list strong { color:#fff; font-size:15px; }
+.welcome-note .values-list p { margin-top:6px; }
+.motto-grid { grid-template-columns:repeat(3, 1fr); }
+.info-card .group-quote { margin-top:14px; }
+@media (max-width: 800px) { .motto-grid { grid-template-columns:1fr; } }

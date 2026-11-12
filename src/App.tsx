@@ -11,6 +11,8 @@ import SayTheirName from './pages/SayTheirName';
 import SonshineClub from './pages/SonshineClub';
 import Salt from './pages/Salt';
 import SupportMinistries from './pages/SupportMinistries';
+import BoysBrigade from './pages/BoysBrigade';
+import GirlsBrigade from './pages/GirlsBrigade';
 
 export default function App() {
   return (
@@ -28,6 +30,8 @@ export default function App() {
           <Route path="say-their-name" element={<SayTheirName />} />
           <Route path="sonshine-club" element={<SonshineClub />} />
           <Route path="salt" element={<Salt />} />
+          <Route path="boys-brigade" element={<BoysBrigade />} />
+          <Route path="girls-brigade" element={<GirlsBrigade />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
