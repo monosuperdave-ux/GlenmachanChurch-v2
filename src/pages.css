@@ -177,6 +177,18 @@ a.activity-card:hover { border-color:var(--blue); transform:translateX(4px); }
 .about-hope-link { margin-top:34px; }
 .welcome-note .text-link { margin-top:16px; color:#a8dfed; }
 
+/* Sermons page: grid of recent services */
+.sermon-grid { list-style:none; padding:0; margin:44px 0 0; display:grid; grid-template-columns:repeat(auto-fill, minmax(230px, 1fr)); gap:20px; }
+.sermon-tile { display:flex; flex-direction:column; width:100%; height:100%; text-align:left; background:#fff; border:1px solid var(--line); padding:0 0 16px; cursor:pointer; font:inherit; color:inherit; transition:transform .2s, box-shadow .2s; }
+.sermon-tile:hover, .sermon-tile:focus-visible { transform:translateY(-4px); box-shadow:0 15px 25px rgba(20,37,52,.09); }
+.sermon-tile.is-playing { border-color:var(--orange); box-shadow:0 0 0 2px var(--orange); }
+.sermon-thumb { position:relative; display:block; aspect-ratio:16 / 9; background:var(--navy); overflow:hidden; }
+.sermon-thumb img { width:100%; height:100%; object-fit:cover; display:block; }
+.sermon-thumb svg { position:absolute; left:50%; top:50%; transform:translate(-50%, -50%); color:#fff; filter:drop-shadow(0 2px 6px rgba(0,0,0,.45)); }
+.sermon-badge { position:absolute; left:10px; top:10px; background:var(--orange); color:#fff; font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; padding:4px 8px; border-radius:3px; }
+.sermon-title { display:block; padding:14px 16px 0; font-family:'Playfair Display', serif; font-size:18px; line-height:1.3; color:var(--navy); }
+.sermon-date { display:block; padding:6px 16px 0; font-size:12px; font-weight:600; color:var(--slate); }
+
 /* Sunday School & Youth Church page */
 .ss-groups { display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; margin-top:36px; }
 .ss-ages { color:var(--orange)!important; font-weight:700; font-size:13px!important; letter-spacing:.06em; text-transform:uppercase; margin-top:6px!important; }

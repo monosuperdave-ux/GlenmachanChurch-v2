@@ -3,6 +3,7 @@ import { Link, Outlet, useLocation } from 'react-router-dom';
 import { ArrowRight, Facebook, Menu, X, Youtube } from 'lucide-react';
 import logoImg from '@/assets/Logo.png';
 import { church } from '@/data/church';
+import { pageMeta } from '@/data/pageMeta';
 
 const navItems = [
   { label: 'About', to: '/about' },
@@ -19,6 +20,13 @@ export default function Layout() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { pathname, hash } = useLocation();
   const closeMenu = () => setMenuOpen(false);
+
+  // Give each page its own browser-tab title and Google description (see src/data/pageMeta.ts)
+  useEffect(() => {
+    const meta = pageMeta[pathname] ?? pageMeta['/'];
+    document.title = meta.title;
+    document.querySelector('meta[name="description"]')?.setAttribute('content', meta.description);
+  }, [pathname]);
 
   // Scroll to the section named in the link, or to the top of a new page
   useEffect(() => {

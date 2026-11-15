@@ -24,3 +24,6 @@ dist-ssr
 
 # Downloads and files from Claude chats (kept on this PC, not uploaded)
 Claude outputs/
+
+# Cloudflare's local test files
+.wrangler/
