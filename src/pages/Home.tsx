@@ -97,6 +97,19 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Our message is Hope: leads to the Gospel message page (src/pages/Hope.tsx) */}
+        <section className="hope-band" aria-labelledby="hope-band-title">
+          <div className="container hope-band-grid">
+            <div>
+              <div className="section-label light">The good news</div>
+              <h2 id="hope-band-title">Our message <span>is Hope.</span></h2>
+              <p>At Glenmachan we believe that the message of the Bible, the message of the Gospel, is one of hope: hope to be reconciled to the God who made us, hope to be set free from the power of sin, and hope of eternal life.</p>
+              <Link className="button button-orange" to="/hope">Discover the hope of the Gospel <ArrowRight size={16} /></Link>
+            </div>
+            <p className="hope-band-quote">“But God proves his own love for us in that while we were still sinners, Christ died for us.”<span>Romans 5:8</span></p>
+          </div>
+        </section>
+
         <section className="pillars-section">
           <div className="container">
             <div className="center-heading"><div className="section-label">Our heartbeat</div><h2>Belong. Grow. <span>Shine.</span></h2><p>Three simple words that shape who we are and how we live together.</p></div>

@@ -100,6 +100,9 @@ export default function About() {
               </li>
             ))}
           </ol>
+          <div className="center-heading about-hope-link">
+            <Link className="text-link" to="/hope">What does this mean for me? Our message is Hope <ArrowRight size={17} /></Link>
+          </div>
         </div>
       </section>
     </>

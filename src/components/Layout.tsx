@@ -6,6 +6,7 @@ import { church } from '@/data/church';
 
 const navItems = [
   { label: 'About', to: '/about' },
+  { label: 'Hope', to: '/hope' },
   { label: 'Sundays', to: '/#services' },
   { label: 'Church Life', to: '/church-life' },
   { label: 'Support', to: '/support-ministries' },
@@ -68,6 +69,7 @@ export default function Layout() {
             <ul className="footer-links">
               <li><Link to="/plan-your-visit">Plan your visit</Link></li>
               <li><Link to="/about">About us</Link></li>
+              <li><Link to="/hope">Our message is Hope</Link></li>
               <li><Link to="/church-life">Church life</Link></li>
               <li><Link to="/support-ministries">Support ministries</Link></li>
               <li><Link to="/sermons">Sermons</Link></li>

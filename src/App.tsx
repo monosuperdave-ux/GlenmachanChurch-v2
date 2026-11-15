@@ -11,6 +11,7 @@ import SayTheirName from './pages/SayTheirName';
 import SonshineClub from './pages/SonshineClub';
 import Salt from './pages/Salt';
 import SupportMinistries from './pages/SupportMinistries';
+import Hope from './pages/Hope';
 import BoysBrigade from './pages/BoysBrigade';
 import GirlsBrigade from './pages/GirlsBrigade';
 
@@ -22,6 +23,7 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path="plan-your-visit" element={<PlanYourVisit />} />
           <Route path="about" element={<About />} />
+          <Route path="hope" element={<Hope />} />
           <Route path="church-life" element={<ChurchLife />} />
           <Route path="support-ministries" element={<SupportMinistries />} />
           <Route path="family-care-in-cancer" element={<FamilyCareInCancer />} />

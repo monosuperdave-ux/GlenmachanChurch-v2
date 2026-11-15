@@ -96,6 +96,7 @@ export default function PlanYourVisit() {
               <div className="info-icon"><HeartHandshake size={22} /></div>
               <h3>Can I come if I’m…?</h3>
               <p>Fill in the blank with whatever worry you have about not being accepted: divorced, a single parent, rich, poor, an addict, a sceptic, too old. Everyone is welcome at Glenmachan. Please come as you are, and we’ll see you on Sunday.</p>
+              <Link className="text-link" to="/hope">Find out about the hope we share <ArrowRight size={17} /></Link>
             </article>
           </div>
         </div>

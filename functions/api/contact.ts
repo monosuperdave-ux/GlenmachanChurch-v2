@@ -17,8 +17,11 @@ interface Env {
   MAILER?: { fetch: (input: string, init?: RequestInit) => Promise<Response> };
 }
 
+// Keep this list the same as `reasons` in src/components/ContactForm.tsx
 const REASONS = [
   'Prayer request',
+  'I’ve prayed the prayer',
+  'I’d like to know more about Jesus',
   'I’d like to talk to a pastor',
   'Planning a visit',
   'Information about a group or event',

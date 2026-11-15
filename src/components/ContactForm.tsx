@@ -1,5 +1,5 @@
 import { useState, type ChangeEvent, type FormEvent } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { ArrowRight, Check, Mail } from 'lucide-react';
 import { church } from '@/data/church';
 
@@ -11,8 +11,11 @@ import { church } from '@/data/church';
 // opens their own email app with the message already filled in.
 // ─────────────────────────────────────────────────────────────
 
+// Keep this list the same as REASONS in functions/api/contact.ts, or the website won't accept the message.
 export const reasons = [
   'Prayer request',
+  'I’ve prayed the prayer',
+  'I’d like to know more about Jesus',
   'I’d like to talk to a pastor',
   'Planning a visit',
   'Information about a group or event',
@@ -22,9 +25,16 @@ export const reasons = [
 
 type Status = 'idle' | 'sending' | 'sent' | 'fallback';
 
+// Links like /?reason=prayed#contact (from the Hope page) open the form with a choice already picked
+const presetReasons: Record<string, string> = {
+  prayed: 'I’ve prayed the prayer',
+  'know-more': 'I’d like to know more about Jesus',
+};
+
 export default function ContactForm() {
+  const [searchParams] = useSearchParams();
   const [status, setStatus] = useState<Status>('idle');
-  const [reason, setReason] = useState('');
+  const [reason, setReason] = useState(presetReasons[searchParams.get('reason') ?? ''] ?? '');
   const [mailto, setMailto] = useState('');
   const [startedAt] = useState(Date.now());
 
