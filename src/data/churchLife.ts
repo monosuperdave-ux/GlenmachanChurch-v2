@@ -16,6 +16,8 @@ export type Group = {
   when?: string;
   where?: string;
   quote?: string; // a short Bible verse or saying, shown in italics under the details
+  image?: string; // optional photo at the top of the card, e.g. '/images/memory-lane.jpg' (only with permission)
+  imageAlt?: string; // describe the photo for people who can't see it
   description: string;
   sections?: { name: string; detail: string }[];
   link?: { label: string; to: string };
@@ -207,17 +209,39 @@ export const groups: Group[] = [
     name: 'Memory Lane',
     category: 'seniors',
     who: 'Over sixties, with friends and neighbours',
-    when: 'Wednesdays, 11:00am – 1:00pm',
-    where: 'Coffee bar',
+    when: 'Wednesdays, 11:00am – 1:00pm (term time)',
+    where: 'Coffee bar, above the Minor Youth Halls',
+    image: '/images/memory-lane.jpg',
+    imageAlt: 'Memory Lane members at long tables set for tea in the coffee bar, listening to a guest at the front',
+    quote: '“Even to your old age and grey hairs I am he, I am he who will sustain you.” Isaiah 46:4',
     description:
-      'Lunch together in our coffee bar, with guest speakers, craft days and information days, not forgetting snooker and pool for the men.',
+      'Good food, good company and a warm welcome every Wednesday. Pull up a chair, catch up with old friends, make some new ones, and enjoy a cooked lunch our volunteers are rightly proud of.',
+    sections: [
+      { name: 'Lunch', detail: 'A delicious cooked meal and dessert, with tea and coffee, prepared and served by our faithful team of volunteers' },
+      { name: 'What’s on', detail: 'A guest speaker every week, plus craft days and information days, and a Christmas dinner to look forward to' },
+      { name: 'For the men', detail: 'Snooker and pool' },
+      { name: 'Cost', detail: 'No set charge. Memory Lane pays for itself through donations on the day' },
+      { name: 'Getting there', detail: 'Level access, with parking facing the entrance. Transport can be offered: contact the church office to check availability and arrange' },
+      { name: 'Booking', detail: 'No need to book, just turn up' },
+    ],
     confirmed: true,
   },
   {
     name: 'Old Time Sing Along',
     category: 'seniors',
-    when: 'Held occasionally. Watch this website and our Facebook page for the next date.',
-    description: 'A friendly welcome, a good sing and a supper provided.',
+    who: 'Mainly our older friends, but everyone is welcome',
+    when: 'Four times a year, on a Monday evening',
+    where: 'Coffee bar',
+    quote: '“Come, let us sing for joy to the Lord; let us shout aloud to the Rock of our salvation.” Psalm 95:1',
+    description:
+      'The old hymns, Gospel songs and choruses, sung the way they were meant to be sung: together, and with gusto. A friendly welcome, a good sing and a supper, all completely free.',
+    sections: [
+      { name: 'What we sing', detail: 'Old hymns, Gospel songs, choruses and old favourites' },
+      { name: 'The music', detail: 'Led on the piano or by our guest musicians' },
+      { name: 'Your favourites', detail: 'Got a hymn you love? Ask, and we’ll do our best to sing it' },
+      { name: 'Supper', detail: 'Supper is provided, and it’s all free' },
+      { name: 'Next date', detail: 'Contact the church office, or keep an eye on this website and our Facebook page' },
+    ],
     confirmed: true,
   },
 

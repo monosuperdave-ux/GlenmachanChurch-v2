@@ -12,6 +12,7 @@ export const slugFor = (name: string) =>
 export default function GroupCard({ group, withId = false }: { group: Group; withId?: boolean }) {
   return (
     <article className="group-card" id={withId ? slugFor(group.name) : undefined}>
+      {group.image && <img className="group-card-photo" src={group.image} alt={group.imageAlt ?? ''} loading="lazy" decoding="async" />}
       <div className="group-card-head">
         <h3>{group.name}</h3>
         {!group.confirmed && <span className="to-confirm" title="Details still being checked">To confirm</span>}
