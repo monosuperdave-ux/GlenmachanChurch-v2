@@ -58,7 +58,7 @@ export const categories: { id: CategoryId; title: string; intro: string; verse?:
     id: 'prayer',
     title: 'Prayer',
     intro:
-      'We run a number of prayer meetings through the week, and prayer ministry is available at each of our Sunday services.',
+      'We meet to pray together every Wednesday night, and prayer ministry is available at all of our services.',
     verse:
       '“If My people who are called by My name will humble themselves, and pray and seek My face, and turn from their wicked ways, then I will hear from heaven, and will forgive their sin and heal their land.” 2 Chronicles 7:14',
   },
@@ -225,15 +225,37 @@ export const groups: Group[] = [
   {
     name: 'Midweek Prayer Meeting',
     category: 'prayer',
-    when: 'Every Wednesday, 7:30pm – 8:30pm',
-    description: 'A time of prayer, worship and seeking God together.',
+    who: 'Everyone welcome',
+    when: 'Every Wednesday, 7:30pm – 8:30pm, all year round',
+    where: 'Coffee bar',
+    quote: '“For where two or three gather in my name, there am I with them.” Matthew 18:20',
+    description:
+      'In the middle of a busy week, we stop, worship and bring everything to God together. Whether you love to pray out loud or would rather sit quietly and listen, you are very welcome to join us.',
+    sections: [
+      { name: 'What happens', detail: 'A short time of worship, then open prayer, led by one of our pastors' },
+      { name: 'What we pray for', detail: 'Our church family, our community, missionaries and the wider world, and the prayer requests people have shared with us' },
+      { name: 'No pressure', detail: 'Pray out loud, or simply listen and agree in your heart. Everyone is welcome' },
+      { name: 'Can’t make it?', detail: 'Send us your prayer request and we will pray for it' },
+    ],
+    link: { label: 'Send a prayer request', to: '/?reason=prayer#contact' },
     confirmed: true,
   },
   {
-    name: 'Prayer ministry',
+    name: 'Prayer Ministry',
     category: 'prayer',
-    when: 'At each of our Sunday services',
-    description: 'If you would like someone to pray with you, just ask one of our team.',
+    who: 'Anyone who would like prayer',
+    when: 'At all of our services',
+    quote: '“Is anyone among you sick? Let them call the elders of the church to pray over them and anoint them with oil in the name of the Lord.” James 5:14',
+    description:
+      'Whatever you are carrying, you don’t have to carry it alone. Prayer is available at every service, led by our pastors and elders, for any need at all.',
+    sections: [
+      { name: 'When', detail: 'During the altar call at any of our services, or privately if you would prefer' },
+      { name: 'Who prays with you', detail: 'Our pastors and elders' },
+      { name: 'Prayer cloths', detail: 'We also offer prayer cloths, anointed with oil and prayed over for your particular need' },
+      { name: 'During the week', detail: 'Send a request through the church office, this website, or directly to one of our pastors or elders, and it will be prayed for in our services' },
+      { name: 'Confidential', detail: 'What you share is kept in confidence. The only exception is if someone may be at risk of harm, when we have a duty to pass it on to our safeguarding lead' },
+    ],
+    link: { label: 'Ask for prayer', to: '/?reason=prayer#contact' },
     confirmed: true,
   },
 

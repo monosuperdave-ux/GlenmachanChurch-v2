@@ -25,8 +25,10 @@ export const reasons = [
 
 type Status = 'idle' | 'sending' | 'sent' | 'fallback';
 
-// Links like /?reason=prayed#contact (from the Hope page) open the form with a choice already picked
+// Links like /?reason=prayed#contact (from the Hope page) or /?reason=prayer#contact (from the
+// Prayer cards on Church Life) open the form with a choice already picked
 const presetReasons: Record<string, string> = {
+  prayer: 'Prayer request',
   prayed: 'I’ve prayed the prayer',
   'know-more': 'I’d like to know more about Jesus',
 };

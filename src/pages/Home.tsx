@@ -127,7 +127,7 @@ export default function Home() {
             <div className="service-list">
               <article className="service-card featured"><div className="service-time"><span>Sundays</span><strong>11:00<small>am</small></strong></div><div><h3>Sunday Morning Service</h3><p>Family Worship · Communion · Sunday School · Youth Church</p><span className="service-note">Coffee & fellowship after the service.</span></div><ArrowRight className="service-arrow" size={20} /></article>
               <article className="service-card"><div className="service-time"><span>Sundays</span><strong>6:00<small>pm</small></strong></div><div><h3>Sunday Evening Family Service</h3><p>A relaxed and welcoming gathering with Bible teaching, fellowship and refreshments.</p><span className="service-note">Everyone is welcome.</span></div><ArrowRight className="service-arrow" size={20} /></article>
-              <article className="service-card"><div className="service-time"><span>Wednesday</span><strong>7:30<small>pm</small></strong></div><div><h3>Midweek Prayer Gathering</h3><p>A time of prayer, worship and seeking God together.</p></div><ArrowRight className="service-arrow" size={20} /></article>
+              <article className="service-card"><div className="service-time"><span>Wednesday</span><strong>7:30<small>pm</small></strong></div><div><h3>Midweek Prayer Meeting</h3><p>A short time of worship and open prayer, in the coffee bar. Everyone is welcome.</p></div><ArrowRight className="service-arrow" size={20} /></article>
             </div>
           </div>
         </section>
