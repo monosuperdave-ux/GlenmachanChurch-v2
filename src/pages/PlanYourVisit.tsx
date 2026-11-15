@@ -85,11 +85,13 @@ export default function PlanYourVisit() {
               <div className="info-icon"><Baby size={22} /></div>
               <h3>What do you do for my children?</h3>
               <p>We run a Sunday School and a Youth Church during our Sunday morning service. Leaving your children somewhere unfamiliar can feel like a big step, so you’re welcome to ask before the service starts to be shown round and to meet the Sunday School and Youth Team Leaders.</p>
+              <p>Children start the service with you and head out to their groups after the time of worship, at around 11:30am. All of our teachers are Access NI checked and trained.</p>
               <div className="info-sublist">
                 <div><strong>Sunday School</strong><p>Pre-school to Year 7. A safe, age-appropriate place where the Bible is taught in a creative and relevant way.</p></div>
-                <div><strong>Youth Church</strong><p>Year 8 and above. Our youth team provides their own service with a Bible lesson and small-group time.</p></div>
+                <div><strong>Youth Church</strong><p>Two groups, Year 8 to 10 and Year 11 to 14. Each has its own service with a Bible lesson and small-group time.</p></div>
                 <div><strong>Nursery</strong><p>A safe and comfortable area for nursing mothers and pre-nursery children, where you can still watch the service.</p></div>
               </div>
+              <Link className="text-link" to="/sunday-school">More about Sunday School and Youth Church <ArrowRight size={17} /></Link>
             </article>
 
             <article className="info-card wide welcome-note">

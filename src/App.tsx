@@ -12,6 +12,7 @@ import SonshineClub from './pages/SonshineClub';
 import Salt from './pages/Salt';
 import SupportMinistries from './pages/SupportMinistries';
 import Hope from './pages/Hope';
+import SundaySchool from './pages/SundaySchool';
 import BoysBrigade from './pages/BoysBrigade';
 import GirlsBrigade from './pages/GirlsBrigade';
 
@@ -24,6 +25,7 @@ export default function App() {
           <Route path="plan-your-visit" element={<PlanYourVisit />} />
           <Route path="about" element={<About />} />
           <Route path="hope" element={<Hope />} />
+          <Route path="sunday-school" element={<SundaySchool />} />
           <Route path="church-life" element={<ChurchLife />} />
           <Route path="support-ministries" element={<SupportMinistries />} />
           <Route path="family-care-in-cancer" element={<FamilyCareInCancer />} />

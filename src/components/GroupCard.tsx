@@ -31,7 +31,7 @@ export default function GroupCard({ group, withId = false }: { group: Group; wit
           ))}
         </dl>
       )}
-      {group.link && <Link className="text-link" to={group.link.to}>{group.link.label} <ArrowRight size={17} /></Link>}
+      {group.link && !group.alsoHere && <Link className="text-link" to={group.link.to}>{group.link.label} <ArrowRight size={17} /></Link>}
       {group.alsoHere && (
         <div className="group-also">
           <h3>{group.alsoHere.name}</h3>
@@ -43,6 +43,8 @@ export default function GroupCard({ group, withId = false }: { group: Group; wit
           <p>{group.alsoHere.description}</p>
         </div>
       )}
+      {/* On a card with a second group, the link goes at the very bottom so it covers both */}
+      {group.link && group.alsoHere && <Link className="text-link" to={group.link.to}>{group.link.label} <ArrowRight size={17} /></Link>}
     </article>
   );
 }

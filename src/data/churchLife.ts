@@ -79,13 +79,17 @@ export const groups: Group[] = [
     category: 'children',
     who: 'Pre-school to Year 7',
     when: 'Sundays during the 11:00am service',
-    description: 'A safe, age-appropriate place where the Bible is taught in a creative and relevant way.',
+    quote: '“Start children off on the way they should go, and even when they are old they will not turn from it.” Proverbs 22:6',
+    description:
+      'A safe, age-appropriate place where the Bible is taught in a creative and relevant way, led by Laura McCauley and a faithful team of Access NI checked teachers and helpers. Children start in the service and head out after the time of worship, at around 11:30am.',
     alsoHere: {
       name: 'Youth Church',
-      who: 'Year 8 and above',
+      who: 'Year 8 to Year 10, and Year 11 to Year 14',
       when: 'Sundays during the 11:00am service',
-      description: 'Our youth team leads its own service with singing, a Bible lesson and small-group time.',
+      description:
+        'Two groups, each with its own service of singing, a Bible lesson and small-group time. Year 8 to 10 is led by Sonya Morrow, and Year 11 to 14 by Lauren Osborne, each supported by faithful teachers and helpers.',
     },
+    link: { label: 'Find out more about Sunday mornings', to: '/sunday-school' },
     confirmed: true,
   },
 
