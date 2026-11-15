@@ -133,14 +133,14 @@ export const groups: Group[] = [
   // ── Young People ──────────────────────────────────────────
   // (Youth Church is shown inside the Sunday School card above)
   {
-    name: 'Access Youth',
+    name: 'Revival Youth',
     category: 'youth',
     who: 'P6 to Year 14',
     when: '1st and 3rd Saturday of the month, 7:30pm – 9:30pm (term time, September to June)',
     where: 'Minor Youth Halls',
     quote: '“Don’t let anyone look down on you because you are young…” 1 Timothy 4:12',
     description:
-      'Two Saturday nights a month, the Minor Youth Halls get loud. Access is our youth club: a safe, friendly place to burn off some energy, hang out with your friends and make new ones. Whether you live for a last-minute winner or you’d rather quietly destroy your mates at a board game, there’s a spot for you. Leave the homework at home.',
+      'Two Saturday nights a month, the Minor Youth Halls get loud. Revival is our youth club: a safe, friendly place to burn off some energy, hang out with your friends and make new ones. Whether you live for a last-minute winner or you’d rather quietly destroy your mates at a board game, there’s a spot for you. Leave the homework at home.',
     sections: [
       { name: 'Sport', detail: 'Football, hockey and badminton' },
       { name: 'Games', detail: 'Table tennis, foosball and gaming consoles' },
