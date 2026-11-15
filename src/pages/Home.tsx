@@ -11,6 +11,7 @@ import {
   Phone,
   ShieldCheck,
   Sparkles,
+  Ticket,
   Users,
   Youtube,
 } from 'lucide-react';
@@ -19,7 +20,7 @@ import worshipTeamImg from '@/assets/Worship_Team.jpg';
 import aerialImg from '@/assets/Glenmachan_soft_edges.jpg';
 import { groups, type CategoryId } from '@/data/churchLife';
 import { church } from '@/data/church';
-import { promo, promoIsLive } from '@/data/promo';
+import { livePromos } from '@/data/promo';
 
 // Homepage "Life at Glenmachan" cards. The group names come from src/data/churchLife.ts
 const activities: { title: string; categories: CategoryId[]; link: string; tone: string }[] = [
@@ -31,6 +32,9 @@ const activities: { title: string; categories: CategoryId[]; link: string; tone:
 const namesFor = (cats: CategoryId[]) => groups.filter((g) => cats.includes(g.category)).flatMap((g) => (g.alsoHere ? [g.name, g.alsoHere.name] : [g.name])).join(' · ');
 
 export default function Home() {
+  const upcoming = livePromos();
+  const [next, ...later] = upcoming;
+
   // Loads the Elfsight platform script (once) for the Facebook feed widget
   useEffect(() => {
     const src = 'https://elfsightcdn.com/platform.js';
@@ -65,19 +69,46 @@ export default function Home() {
           <div className="scroll-note desktop-scroll-note"><span /> Scroll to explore</div>
         </section>
 
-        {/* WHAT'S ON promo: switch it on or off in src/data/promo.ts */}
-        {promoIsLive() && (
+        {/* COMING UP: events are listed in src/data/promo.ts. The soonest is shown large. */}
+        {upcoming.length > 0 && (
           <section className="promo-band" aria-labelledby="promo-title">
-            <div className={promo.image ? 'container promo-grid' : 'container promo-grid no-image'}>
-              {promo.image && <img src={promo.image} alt={promo.imageAlt} loading="lazy" />}
+            <div className={next.image ? 'container promo-grid' : 'container promo-grid no-image'}>
+              {next.image && <img src={next.image} alt={next.imageAlt ?? ''} loading="lazy" decoding="async" />}
               <div>
-                <div className="section-label">{promo.label}</div>
-                <h2 id="promo-title">{promo.title}</h2>
-                <p className="promo-when"><CalendarDays size={17} /> {promo.when}</p>
-                <p>{promo.description}</p>
-                {promo.buttonText && <Link className="button button-orange" to={promo.buttonLink}>{promo.buttonText} <ArrowRight size={16} /></Link>}
+                <div className="section-label">Coming up · {next.label}</div>
+                <h2 id="promo-title">{next.title}</h2>
+                <ul className="promo-facts">
+                  <li><CalendarDays size={17} /> {next.when}</li>
+                  {next.where && <li><MapPin size={17} /> {next.where}</li>}
+                  {next.cost && <li><Ticket size={17} /> {next.cost}</li>}
+                </ul>
+                <p>{next.description}</p>
+                {next.buttonText && next.buttonLink && <Link className="button button-orange" to={next.buttonLink}>{next.buttonText} <ArrowRight size={16} /></Link>}
               </div>
             </div>
+            {later.length > 0 && (
+              <div className="container promo-later">
+                <h3 className="promo-later-title">Also coming up</h3>
+                <div className="promo-later-grid">
+                  {later.map((p) => (
+                    <article className="promo-card" key={p.title}>
+                      {p.image && <img src={p.image} alt={p.imageAlt ?? ''} loading="lazy" decoding="async" />}
+                      <div>
+                        <div className="section-label">{p.label}</div>
+                        <h4>{p.title}</h4>
+                        <ul className="promo-facts">
+                          <li><CalendarDays size={15} /> {p.when}</li>
+                          {p.where && <li><MapPin size={15} /> {p.where}</li>}
+                          {p.cost && <li><Ticket size={15} /> {p.cost}</li>}
+                        </ul>
+                        <p>{p.description}</p>
+                        {p.buttonText && p.buttonLink && <Link className="text-link" to={p.buttonLink}>{p.buttonText} <ArrowRight size={16} /></Link>}
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </div>
+            )}
           </section>
         )}
 

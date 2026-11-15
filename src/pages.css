@@ -177,6 +177,28 @@ a.activity-card:hover { border-color:var(--blue); transform:translateX(4px); }
 .about-hope-link { margin-top:34px; }
 .welcome-note .text-link { margin-top:16px; color:#a8dfed; }
 
+/* Homepage "Coming up" events */
+.promo-band .section-label { color:var(--orange); }
+.promo-grid > img { max-width:340px; }
+.promo-facts { list-style:none; padding:0; margin:16px 0 0; display:grid; gap:8px; }
+.promo-facts li { display:flex; align-items:flex-start; gap:9px; color:var(--navy); font-weight:600; font-size:14px; line-height:1.5; }
+.promo-facts svg { flex:0 0 auto; margin-top:2px; color:var(--orange); }
+.promo-later { margin-top:56px; padding-top:40px; border-top:1px solid rgba(20,37,52,.12); }
+.promo-later-title { font-family:'Playfair Display', serif; font-size:clamp(24px, 3vw, 32px); color:var(--navy); }
+.promo-later-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:22px; margin-top:24px; }
+.promo-card { display:grid; grid-template-columns:150px 1fr; gap:22px; align-items:start; background:#fff; border:1px solid var(--line); border-radius:10px; padding:20px; box-shadow:0 10px 22px rgba(20,37,52,.06); }
+.promo-card img { width:100%; height:auto; border-radius:8px; box-shadow:0 8px 16px rgba(20,37,52,.14); }
+.promo-card h4 { font-family:'Playfair Display', serif; font-size:21px; line-height:1.25; color:var(--navy); margin-top:8px; }
+.promo-card .promo-facts li { font-size:13px; }
+.promo-card p { font-size:13px; margin-top:10px; }
+.promo-card .text-link { margin-top:12px; }
+@media (max-width: 800px) {
+  .promo-grid > img { max-width:300px; }
+  .promo-later-grid { grid-template-columns:1fr; }
+  .promo-card { grid-template-columns:1fr; }
+  .promo-card img { max-width:260px; }
+}
+
 /* Sermons page: grid of recent services */
 .sermon-grid { list-style:none; padding:0; margin:44px 0 0; display:grid; grid-template-columns:repeat(auto-fill, minmax(230px, 1fr)); gap:20px; }
 .sermon-tile { display:flex; flex-direction:column; width:100%; height:100%; text-align:left; background:#fff; border:1px solid var(--line); padding:0 0 16px; cursor:pointer; font:inherit; color:inherit; transition:transform .2s, box-shadow .2s; }

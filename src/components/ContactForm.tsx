@@ -29,6 +29,7 @@ type Status = 'idle' | 'sending' | 'sent' | 'fallback';
 // Prayer cards on Church Life) open the form with a choice already picked
 const presetReasons: Record<string, string> = {
   prayer: 'Prayer request',
+  event: 'Information about a group or event',
   prayed: 'I’ve prayed the prayer',
   'know-more': 'I’d like to know more about Jesus',
 };
