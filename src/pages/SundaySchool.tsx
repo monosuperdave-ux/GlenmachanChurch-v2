@@ -30,8 +30,8 @@ const groups = [
   },
 ];
 
-// Special Sundays and events through the year. Dates for the summer scheme go in the homepage
-// promo (src/data/promo.ts) nearer the time.
+// Special Sundays and events through the year. Dates for the summer scheme go on the
+// What's On page (src/data/promo.ts) nearer the time.
 const highlights = [
   {
     name: 'Christmas parties',
@@ -51,7 +51,7 @@ const highlights = [
   {
     name: 'Summer scheme',
     when: 'Sundays in the summer holidays',
-    text: 'Sunday School keeps going all summer with our summer scheme, every Sunday during the school holidays. Watch this website for details nearer the time.',
+    text: 'Sunday School keeps going all summer with our summer scheme, every Sunday during the school holidays. Watch our What’s On page for details nearer the time.',
   },
 ];
 

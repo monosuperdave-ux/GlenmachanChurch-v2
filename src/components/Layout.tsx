@@ -11,6 +11,7 @@ const navItems = [
   { label: 'Sundays', to: '/#services' },
   { label: 'Church Life', to: '/church-life' },
   { label: 'Support', to: '/support-ministries' },
+  { label: 'What’s On', to: '/events' },
   { label: 'Sermons', to: '/sermons' },
   { label: 'Contact', to: '/#contact' },
   { label: 'Find Us', to: '/#visit' },
@@ -80,6 +81,7 @@ export default function Layout() {
               <li><Link to="/hope">Our message is Hope</Link></li>
               <li><Link to="/church-life">Church life</Link></li>
               <li><Link to="/support-ministries">Support ministries</Link></li>
+              <li><Link to="/events">What’s on</Link></li>
               <li><Link to="/sermons">Sermons</Link></li>
               <li><Link to="/privacy">Privacy &amp; cookies</Link></li>
             </ul>

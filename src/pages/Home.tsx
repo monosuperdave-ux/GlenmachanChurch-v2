@@ -11,7 +11,6 @@ import {
   Phone,
   ShieldCheck,
   Sparkles,
-  Ticket,
   Users,
   Youtube,
 } from 'lucide-react';
@@ -32,8 +31,7 @@ const activities: { title: string; categories: CategoryId[]; link: string; tone:
 const namesFor = (cats: CategoryId[]) => groups.filter((g) => cats.includes(g.category)).flatMap((g) => (g.alsoHere ? [g.name, g.alsoHere.name] : [g.name])).join(' · ');
 
 export default function Home() {
-  const upcoming = livePromos();
-  const [next, ...later] = upcoming;
+  const [next, ...later] = livePromos();
 
   // Loads the Elfsight platform script (once) for the Facebook feed widget
   useEffect(() => {
@@ -69,48 +67,22 @@ export default function Home() {
           <div className="scroll-note desktop-scroll-note"><span /> Scroll to explore</div>
         </section>
 
-        {/* COMING UP: events are listed in src/data/promo.ts. The soonest is shown large. */}
-        {upcoming.length > 0 && (
-          <section className="promo-band" aria-labelledby="promo-title">
-            <div className={next.image ? 'container promo-grid' : 'container promo-grid no-image'}>
-              {next.image && <img src={next.image} alt={next.imageAlt ?? ''} loading="lazy" decoding="async" />}
-              <div>
-                <div className="section-label">Coming up · {next.label}</div>
-                <h2 id="promo-title">{next.title}</h2>
-                <ul className="promo-facts">
-                  <li><CalendarDays size={17} /> {next.when}</li>
-                  {next.where && <li><MapPin size={17} /> {next.where}</li>}
-                  {next.cost && <li><Ticket size={17} /> {next.cost}</li>}
-                </ul>
-                <p>{next.description}</p>
-                {next.buttonText && next.buttonLink && <Link className="button button-orange" to={next.buttonLink}>{next.buttonText} <ArrowRight size={16} /></Link>}
-              </div>
-            </div>
-            {later.length > 0 && (
-              <div className="container promo-later">
-                <h3 className="promo-later-title">Also coming up</h3>
-                <div className="promo-later-grid">
-                  {later.map((p) => (
-                    <article className="promo-card" key={p.title}>
-                      {p.image && <img src={p.image} alt={p.imageAlt ?? ''} loading="lazy" decoding="async" />}
-                      <div>
-                        <div className="section-label">{p.label}</div>
-                        <h4>{p.title}</h4>
-                        <ul className="promo-facts">
-                          <li><CalendarDays size={15} /> {p.when}</li>
-                          {p.where && <li><MapPin size={15} /> {p.where}</li>}
-                          {p.cost && <li><Ticket size={15} /> {p.cost}</li>}
-                        </ul>
-                        <p>{p.description}</p>
-                        {p.buttonText && p.buttonLink && <Link className="text-link" to={p.buttonLink}>{p.buttonText} <ArrowRight size={16} /></Link>}
-                      </div>
-                    </article>
-                  ))}
-                </div>
-              </div>
-            )}
-          </section>
-        )}
+        {/* WHAT'S ON banner: a slim link to the events page (src/pages/Events.tsx).
+            The events themselves are listed in src/data/promo.ts. */}
+        <section className="events-banner" aria-label="Upcoming events">
+          <div className="container events-banner-inner">
+            <CalendarDays size={20} aria-hidden="true" />
+            <p>
+              <strong>Upcoming events at Glenmachan</strong>
+              {next ? (
+                <span> · Next: {next.title}, {next.when.split(' · ')[0]}{later.length > 0 ? ` (+${later.length} more)` : ''}</span>
+              ) : (
+                <span> · Special nights, dinners and days out</span>
+              )}
+            </p>
+            <Link className="events-banner-link" to="/events">See what’s on <ArrowRight size={16} /></Link>
+          </div>
+        </section>
 
         <section className="welcome section container" id="about">
           <div className="section-label">Welcome home</div>

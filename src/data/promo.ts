@@ -1,8 +1,8 @@
 // ─────────────────────────────────────────────────────────────
-// HOMEPAGE EVENTS ("Coming up" band under the hero)
+// UPCOMING EVENTS (the What's On page, /events)
 //
-// Each event below shows on the homepage, soonest first. The soonest
-// one is shown large; the rest appear underneath as "Also coming up".
+// Each event below shows on the What's On page, soonest first. The
+// homepage banner names the next one and links to the page.
 //
 // To add an event:   copy one of the blocks below and change the details.
 // To hide one early: set show to false.

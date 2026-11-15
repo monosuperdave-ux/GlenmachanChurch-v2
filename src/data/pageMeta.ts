@@ -56,6 +56,10 @@ export const pageMeta: Record<string, { title: string; description: string }> = 
     title: `SALT Ministry | ${SITE}`,
     description: 'Serving All, Labouring Together: our food hamper and support ministry for local families in need.',
   },
+  '/events': {
+    title: `What’s On | ${SITE}`,
+    description: 'Upcoming events at Glenmachan Church of God in East Belfast: special nights, dinners and days out. Everyone welcome.',
+  },
   '/sermons': {
     title: `Sermons | ${SITE}`,
     description: 'Watch recent Sunday services and messages from Glenmachan Church of God.',

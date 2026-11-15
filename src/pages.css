@@ -177,26 +177,41 @@ a.activity-card:hover { border-color:var(--blue); transform:translateX(4px); }
 .about-hope-link { margin-top:34px; }
 .welcome-note .text-link { margin-top:16px; color:#a8dfed; }
 
-/* Homepage "Coming up" events */
-.promo-band .section-label { color:var(--orange); }
-.promo-grid > img { max-width:340px; }
+/* Event details list (date, place, cost) */
 .promo-facts { list-style:none; padding:0; margin:16px 0 0; display:grid; gap:8px; }
 .promo-facts li { display:flex; align-items:flex-start; gap:9px; color:var(--navy); font-weight:600; font-size:14px; line-height:1.5; }
 .promo-facts svg { flex:0 0 auto; margin-top:2px; color:var(--orange); }
-.promo-later { margin-top:56px; padding-top:40px; border-top:1px solid rgba(20,37,52,.12); }
-.promo-later-title { font-family:'Playfair Display', serif; font-size:clamp(24px, 3vw, 32px); color:var(--navy); }
-.promo-later-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:22px; margin-top:24px; }
-.promo-card { display:grid; grid-template-columns:150px 1fr; gap:22px; align-items:start; background:#fff; border:1px solid var(--line); border-radius:10px; padding:20px; box-shadow:0 10px 22px rgba(20,37,52,.06); }
-.promo-card img { width:100%; height:auto; border-radius:8px; box-shadow:0 8px 16px rgba(20,37,52,.14); }
-.promo-card h4 { font-family:'Playfair Display', serif; font-size:21px; line-height:1.25; color:var(--navy); margin-top:8px; }
-.promo-card .promo-facts li { font-size:13px; }
-.promo-card p { font-size:13px; margin-top:10px; }
-.promo-card .text-link { margin-top:12px; }
+
+/* Homepage "Upcoming events" banner: one slim strip linking to What's On */
+.events-banner { background:var(--navy); border-top:3px solid var(--orange); color:#fff; }
+.events-banner-inner { display:flex; align-items:center; gap:14px; padding-top:18px; padding-bottom:18px; }
+.events-banner-inner > svg { flex:0 0 auto; color:var(--orange); }
+.events-banner p { flex:1; font-size:14px; line-height:1.5; color:rgba(255,255,255,.82); }
+.events-banner strong { color:#fff; }
+.events-banner-link { flex:0 0 auto; display:inline-flex; align-items:center; gap:8px; background:var(--orange); color:#fff; font-size:12px; font-weight:700; letter-spacing:.02em; padding:11px 16px; border-radius:3px; white-space:nowrap; transition:filter .2s; }
+.events-banner-link:hover { filter:brightness(1.08); }
 @media (max-width: 800px) {
-  .promo-grid > img { max-width:300px; }
-  .promo-later-grid { grid-template-columns:1fr; }
-  .promo-card { grid-template-columns:1fr; }
-  .promo-card img { max-width:260px; }
+  .events-banner-inner { flex-wrap:wrap; }
+  .events-banner p { flex-basis:calc(100% - 40px); }
+  .events-banner-link { width:100%; justify-content:center; }
+}
+
+/* What's On page */
+.events-list { list-style:none; padding:0; margin:40px 0 0; display:grid; gap:28px; }
+.event-card { display:grid; grid-template-columns:300px 1fr; gap:40px; align-items:center; background:#fff; border:1px solid var(--line); border-radius:12px; padding:28px; box-shadow:0 12px 25px rgba(20,37,52,.06); }
+.event-card.no-image { grid-template-columns:1fr; }
+.event-card img { width:100%; height:auto; border-radius:10px; box-shadow:0 12px 25px rgba(20,37,52,.14); }
+.event-card .section-label { color:var(--orange); }
+.event-card h3 { font-family:'Playfair Display', serif; font-size:clamp(26px, 3vw, 36px); line-height:1.15; color:var(--navy); margin-top:10px; }
+.event-card p { color:var(--slate); font-size:15px; line-height:1.7; margin-top:14px; max-width:600px; }
+.event-card .button { margin-top:22px; width:max-content; }
+.events-empty { margin-top:28px; background:#fff; border:1px dashed var(--line); border-radius:12px; padding:28px; }
+.events-empty p { color:var(--slate); font-size:15px; line-height:1.7; max-width:640px; }
+.events-empty .text-link { margin-top:14px; }
+@media (max-width: 800px) {
+  .event-card { grid-template-columns:1fr; gap:22px; padding:20px; }
+  .event-card img { max-width:320px; }
+  .event-card .button { width:100%; }
 }
 
 /* Sermons page: grid of recent services */
