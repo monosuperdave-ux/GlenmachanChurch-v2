@@ -1,6 +1,13 @@
+# Security settings for every page
+# - Only this site may show our pages inside a frame (stops other sites disguising or overlaying it)
+# - frame-src lists the outside sites we embed (Facebook, YouTube, Google Maps). Add new embeds here.
+# - Camera, microphone and location are switched off, as the site never needs them
 /*
-  X-Frame-Options: ALLOWALL
-  Content-Security-Policy: frame-src 'self' https://www.facebook.com https://*.facebook.com https://www.youtube-nocookie.com https://www.youtube.com https://www.google.com;
+  X-Frame-Options: SAMEORIGIN
+  Content-Security-Policy: frame-ancestors 'self'; frame-src 'self' https://www.facebook.com https://*.facebook.com https://www.youtube-nocookie.com https://www.youtube.com https://www.google.com;
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
 
 # Keep the Cloudflare preview copies (*.pages.dev) out of Google, so only glenmachanchurch.org is listed
 https://:project.pages.dev/*
