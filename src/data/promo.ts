@@ -12,6 +12,12 @@
 //                    Leave it as '' for no poster.
 // ─────────────────────────────────────────────────────────────
 
+import { revivalYouthDates } from './churchLife';
+import { dayMonth, nextDate, upcomingDates } from './dates';
+
+// Revival Youth shows one listing that moves on to the next date by itself
+const revivalNext = nextDate(revivalYouthDates);
+
 export type Promo = {
   show: boolean;
   label: string;
@@ -60,6 +66,24 @@ export const promos: Promo[] = [
     buttonLink: '/church-life#men',
     date: '2026-12-04',
     hideAfter: '2026-12-04',
+  },
+  {
+    show: true,
+    label: 'Youth · P6 to Year 14',
+    title: revivalNext === '2026-12-12' ? 'Revival Youth: Christmas dinner' : 'Revival Youth',
+    when: `Saturday ${dayMonth(revivalNext)} · 7:30pm – 9:30pm`,
+    where: 'Minor Youth Halls, Glenmachan Church of God',
+    cost: 'Free (bring a bit of pocket money for the tuck shop)',
+    description:
+      'Saturday night is sorted. Football, hockey, table tennis, consoles, a tuck shop and somewhere quieter to hang out with your friends. ' +
+      (revivalNext <= '2026-12-12' ? 'Saturday 12 December is our Christmas dinner! ' : '') +
+      `Dates coming up: ${upcomingDates(revivalYouthDates)}. Invite a friend, and follow @revival.youth.belfast on Instagram.`,
+    image: '/images/events/revival-youth-2026-27.jpg',
+    imageAlt: 'Revival Youth graphic: youth club for P6 to Year 14. Upcoming Saturday dates 21 November, 12 December (Christmas dinner), 2 and 16 January, 6 and 20 February, 7:30pm to 9:30pm in the Minor Youth Halls. Free entry, bring a friend. Instagram @revival.youth.belfast.',
+    buttonText: 'About Revival Youth',
+    buttonLink: '/church-life#youth',
+    date: revivalNext,
+    hideAfter: '2027-02-20',
   },
   {
     show: true,

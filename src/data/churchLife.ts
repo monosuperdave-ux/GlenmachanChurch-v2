@@ -7,6 +7,8 @@
 // Change it to true once the church office has checked the details.
 // ─────────────────────────────────────────────────────────────
 
+import { upcomingDates } from './dates';
+
 export type CategoryId = 'children' | 'youth' | 'women' | 'men' | 'seniors' | 'prayer' | 'support';
 
 export type Group = {
@@ -33,15 +35,11 @@ const mensBreakfastDates = [
   '2027-02-06', '2027-03-06', '2027-04-03', '2027-05-01', '2027-06-05',
 ];
 
-// Turns a list of dates into "5 December, 6 February, 6 March", leaving out any that have passed
-function upcomingDates(dates: string[]) {
-  const today = new Date().toISOString().slice(0, 10);
-  const left = dates.filter((d) => d >= today);
-  if (left.length === 0) return 'New dates coming soon. Contact the church office for details';
-  return left
-    .map((d) => new Date(`${d}T12:00:00`).toLocaleDateString('en-GB', { day: 'numeric', month: 'long' }))
-    .join(', ');
-}
+// Revival Youth dates (from their poster). Also used for the What's On listing in promo.ts.
+// Add the next batch here when you have them (YYYY-MM-DD).
+export const revivalYouthDates = [
+  '2026-11-21', '2026-12-12', '2027-01-02', '2027-01-16', '2027-02-06', '2027-02-20',
+];
 
 export const categories:{ id: CategoryId; title: string; intro: string; verse?: string }[] = [
   {
@@ -159,11 +157,13 @@ export const groups: Group[] = [
     description:
       'Two Saturday nights a month, the Minor Youth Halls get loud. Revival is our youth club: a safe, friendly place to burn off some energy, hang out with your friends and make new ones. Whether you live for a last-minute winner or you’d rather quietly destroy your mates at a board game, there’s a spot for you. Leave the homework at home.',
     sections: [
+      { name: 'Coming up', detail: upcomingDates(revivalYouthDates) },
       { name: 'Sport', detail: 'Football, hockey and badminton' },
       { name: 'Games', detail: 'Table tennis, foosball and gaming consoles' },
       { name: 'Chill-out', detail: 'Quieter areas to chat or play board games' },
       { name: 'Tuck shop', detail: 'Of course! Bring a bit of pocket money' },
       { name: 'Entry', detail: 'Free' },
+      { name: 'Instagram', detail: 'Follow @revival.youth.belfast for news and photos' },
       { name: 'For parents', detail: 'All our leaders are Access NI checked and trained in the church’s safeguarding. Contact the church office with any questions' },
     ],
     confirmed: true,
