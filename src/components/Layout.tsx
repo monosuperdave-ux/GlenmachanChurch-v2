@@ -6,6 +6,7 @@ import { church } from '@/data/church';
 import { pageMeta } from '@/data/pageMeta';
 
 const navItems = [
+  { label: 'Home', to: '/' },
   { label: 'About', to: '/about' },
   { label: 'Hope', to: '/hope' },
   { label: 'Sundays', to: '/#services' },
@@ -51,9 +52,13 @@ export default function Layout() {
           {menuOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
         <nav className={menuOpen ? 'main-nav is-open' : 'main-nav'} aria-label="Main navigation">
-          {navItems.map((item) => (
-            <Link to={item.to} key={item.label} onClick={closeMenu}>{item.label}</Link>
-          ))}
+          {navItems.map((item) => {
+            // Highlight the page you're on (links to a part of the homepage, like Contact, aren't highlighted)
+            const current = item.to === pathname && !(pathname === '/' && hash);
+            return (
+              <Link to={item.to} key={item.label} onClick={closeMenu} className={current ? 'is-current' : undefined} aria-current={current ? 'page' : undefined}>{item.label}</Link>
+            );
+          })}
           <Link className="nav-button" to="/plan-your-visit" onClick={closeMenu}>Plan your visit <ArrowRight size={16} /></Link>
         </nav>
       </header>
@@ -76,6 +81,7 @@ export default function Layout() {
           <div>
             <span className="footer-label">Explore</span>
             <ul className="footer-links">
+              <li><Link to="/">Home</Link></li>
               <li><Link to="/plan-your-visit">Plan your visit</Link></li>
               <li><Link to="/about">About us</Link></li>
               <li><Link to="/hope">Our message is Hope</Link></li>

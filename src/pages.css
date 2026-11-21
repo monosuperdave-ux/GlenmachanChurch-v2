@@ -252,10 +252,13 @@ a.activity-card:hover { border-color:var(--blue); transform:translateX(4px); }
 
 /* Top menu: keep it on one line on small laptops and tablets, just above the phone menu size */
 .main-nav a { white-space:nowrap; }
-@media (min-width: 801px) and (max-width: 980px) {
+.site-header .brand { flex-shrink:0; }
+/* The page you're on: full brightness with an orange underline */
+.main-nav a.is-current { opacity:1; color:#fff; text-decoration:underline; text-decoration-color:var(--orange); text-decoration-thickness:2px; text-underline-offset:7px; }
+@media (min-width: 801px) and (max-width: 1140px) {
   .site-header { padding-left:3%; padding-right:3%; }
-  .main-nav { gap:16px; }
-  .nav-button { padding:10px 13px; }
+  .main-nav { gap:12px; font-size:11px; letter-spacing:.01em; }
+  .nav-button { padding:9px 11px; }
 }
 
 /* Boys' Brigade and Girls' Brigade pages */
