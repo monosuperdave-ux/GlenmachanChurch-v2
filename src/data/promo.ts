@@ -63,6 +63,22 @@ export const promos: Promo[] = [
   },
   {
     show: true,
+    label: 'For men · Breakfast',
+    title: 'Men’s Breakfast & Bible Study',
+    when: 'Saturday 5 December · 9:30am – 11:30am',
+    where: 'The coffee bar, Glenmachan Church of God',
+    cost: 'Free, a donation towards the food is appreciated',
+    description:
+      'A fry, a hot cup of tea and an open Bible. There are worse ways to start a Saturday. This season we’re on a journey through Mark’s Gospel: we eat first (priorities), then open God’s Word together and talk it through. No need to book, just turn up hungry.',
+    image: '/images/events/mens-breakfast-2026-12.jpg',
+    imageAlt: 'Men’s Breakfast and Bible Study graphic: men enjoying a fry around a long table in the coffee bar. Saturday 5 December, 9:30am, free. A journey through Mark’s Gospel.',
+    buttonText: 'All breakfast dates',
+    buttonLink: '/church-life#men',
+    date: '2026-12-05',
+    hideAfter: '2026-12-05',
+  },
+  {
+    show: true,
     label: 'Adelphos · Bowling',
     title: 'The Paul Sims Bowling Competition',
     when: 'Fridays 15 January, 12 February and 12 March · 8:00pm',

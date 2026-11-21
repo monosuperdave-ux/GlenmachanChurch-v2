@@ -26,7 +26,24 @@ export type Group = {
   confirmed: boolean;
 };
 
-export const categories: { id: CategoryId; title: string; intro: string; verse?: string }[] = [
+// Men's Breakfast dates for this season (from the 2026–27 poster). Past dates drop off
+// by themselves. Add next season's dates here when you have them (YYYY-MM-DD).
+const mensBreakfastDates = [
+  '2026-09-05', '2026-10-03', '2026-11-07', '2026-12-05',
+  '2027-02-06', '2027-03-06', '2027-04-03', '2027-05-01', '2027-06-05',
+];
+
+// Turns a list of dates into "5 December, 6 February, 6 March", leaving out any that have passed
+function upcomingDates(dates: string[]) {
+  const today = new Date().toISOString().slice(0, 10);
+  const left = dates.filter((d) => d >= today);
+  if (left.length === 0) return 'New dates coming soon. Contact the church office for details';
+  return left
+    .map((d) => new Date(`${d}T12:00:00`).toLocaleDateString('en-GB', { day: 'numeric', month: 'long' }))
+    .join(', ');
+}
+
+export const categories:{ id: CategoryId; title: string; intro: string; verse?: string }[] = [
   {
     id: 'children',
     title: 'Children',
@@ -200,6 +217,8 @@ export const groups: Group[] = [
       'A fry, a hot cup of tea and an open Bible. There are worse ways to start a Saturday. We eat first (priorities), then open God’s Word together and talk it through. Come hungry, bring your questions, and leave encouraged.',
     sections: [
       { name: 'On the menu', detail: 'A fry or sausage baps, with tea and coffee' },
+      { name: 'This season', detail: 'A journey through Mark’s Gospel' },
+      { name: 'Coming up', detail: upcomingDates(mensBreakfastDates) },
       { name: 'The Bible study', detail: 'Led by one or two men from the church, working through a chapter or a few verses as part of a theme for the session' },
       { name: 'The chat', detail: 'Afterwards we talk about what we’ve read: exploring, questioning and encouraging each other' },
       { name: 'Cost', detail: 'Free. If you can afford it, a donation towards the food is appreciated' },
