@@ -205,6 +205,8 @@ a.activity-card:hover { border-color:var(--blue); transform:translateX(4px); }
 .event-card h3 { font-family:'Playfair Display', serif; font-size:clamp(26px, 3vw, 36px); line-height:1.15; color:var(--navy); margin-top:10px; }
 .event-card p { color:var(--slate); font-size:15px; line-height:1.7; margin-top:14px; max-width:600px; }
 .event-card .button { margin-top:22px; width:max-content; }
+.event-details { max-width:600px; margin-top:18px; }
+.event-details dd { color:var(--slate); line-height:1.55; }
 .events-empty { margin-top:28px; background:#fff; border:1px dashed var(--line); border-radius:12px; padding:28px; }
 .events-empty p { color:var(--slate); font-size:15px; line-height:1.7; max-width:640px; }
 .events-empty .text-link { margin-top:14px; }

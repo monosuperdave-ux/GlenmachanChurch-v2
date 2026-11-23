@@ -26,6 +26,7 @@ export type Promo = {
   where?: string;
   cost?: string;
   description: string;
+  details?: { name: string; detail: string }[]; // optional extra lines, e.g. how to get tickets
   image?: string;
   imageAlt?: string;
   buttonText?: string;
@@ -100,6 +101,29 @@ export const promos: Promo[] = [
     buttonLink: '/church-life#men',
     date: '2026-12-05',
     hideAfter: '2026-12-05',
+  },
+  {
+    show: true,
+    label: 'Christmas concert',
+    title: 'Festive Brass & Voices',
+    when: 'Saturday 19 December · 7:30pm',
+    where: 'Glenmachan Church of God',
+    cost: 'Tickets £15',
+    description:
+      'Festival Brass invite you to an evening of Christmas music, with the Miskelly Chorale (Musical Director Edwin Gray), Strandtown Primary School Choir (Conductor Mrs Hannah Makinson) and Festival Brass themselves (Conductor Alan Corry). Your compère for the night is George Jones. Bring the family and get into the Christmas spirit.',
+    details: [
+      { name: 'Buy in advance', detail: 'In person at the church office, or by phone on 028 9076 1676 and collect from the office' },
+      { name: 'Reserve', detail: 'Reserve your tickets with the church office and pay on the night' },
+      { name: 'Paying', detail: 'Cash, or cheque made payable to Festival Brass' },
+      { name: 'Also from', detail: 'Festival Brass, 07980 306425 (phone or post), and Matchetts Music, Wellington Place, Belfast, 028 9032 6695' },
+      { name: 'Interval', detail: 'Tea and coffee, cash only. Every penny goes towards the work of the church' },
+    ],
+    image: '/images/events/festive-brass-voices-2026.jpg',
+    imageAlt: 'Festival Brass presents Festive Brass and Voices poster: Saturday 19 December 2026, 7:30pm, Glenmachan Church of God. Compère George Jones. Featuring the Miskelly Chorale, Strandtown Primary School Choir and Festival Brass. Tickets £15.',
+    buttonText: 'Ask about tickets',
+    buttonLink: '/?reason=event#contact',
+    date: '2026-12-19',
+    hideAfter: '2026-12-19',
   },
   {
     show: true,

@@ -45,6 +45,13 @@ export default function Events() {
                         {e.cost && <li><Ticket size={17} /> {e.cost}</li>}
                       </ul>
                       <p>{e.description}</p>
+                      {e.details && (
+                        <dl className="group-sections event-details">
+                          {e.details.map((d) => (
+                            <div key={d.name}><dt>{d.name}</dt><dd>{d.detail}</dd></div>
+                          ))}
+                        </dl>
+                      )}
                       {e.buttonText && e.buttonLink && <Link className="button button-orange" to={e.buttonLink}>{e.buttonText} <ArrowRight size={16} /></Link>}
                     </div>
                   </article>
