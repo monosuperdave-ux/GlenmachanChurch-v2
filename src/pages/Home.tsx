@@ -11,12 +11,15 @@ import {
   Phone,
   ShieldCheck,
   Sparkles,
+  Star,
   Users,
   Youtube,
 } from 'lucide-react';
 import ContactForm from '@/components/ContactForm';
 import worshipTeamImg from '@/assets/Worship_Team.jpg';
 import aerialImg from '@/assets/Glenmachan_soft_edges.jpg';
+import christmasImg from '@/assets/Christmas_Snow.jpg';
+import { isChristmas } from '@/data/christmas';
 import { groups, type CategoryId } from '@/data/churchLife';
 import { church } from '@/data/church';
 import { livePromos } from '@/data/promo';
@@ -32,6 +35,7 @@ const namesFor = (cats: CategoryId[]) => groups.filter((g) => cats.includes(g.ca
 
 export default function Home() {
   const [next, ...later] = livePromos();
+  const christmas = isChristmas();
 
   // Loads the Elfsight platform script (once) for the Facebook feed widget
   useEffect(() => {
@@ -46,6 +50,36 @@ export default function Home() {
 
   return (
     <>
+        {christmas ? (
+        /* CHRISTMAS HERO: shown between the dates in src/data/christmas.ts */
+        <section className="hero hero-christmas" aria-labelledby="hero-title">
+          <div className="hero-image" style={{ backgroundImage: `linear-gradient(90deg, rgba(8,26,38,.78), rgba(10,35,48,.38) 42%, rgba(8,26,38,0) 66%), linear-gradient(0deg, rgba(8,26,38,.4), transparent 25%), url(${christmasImg})` }} />
+          <div className="christmas-glow" />
+          <div className="snow" aria-hidden="true"><span /><span /><span /></div>
+          <div className="hero-content container mobile-hero-reposition">
+            <div className="eyebrow light mobile-eyebrow christmas-eyebrow"><Star size={13} aria-hidden="true" /> The reason for the season</div>
+            <div className="mobile-title-block">
+              <h1 id="hero-title">Christmas at<br /><em>Glenmachan</em></h1>
+            </div>
+            <div className="mobile-center-paragraph">
+              <blockquote className="christmas-verse mobile-subtitle">
+                “Today in the town of David a Saviour has been born to you; he is the Messiah, the Lord.”
+                <cite>Luke 2:11</cite>
+              </blockquote>
+              <p className="hero-copy mobile-copy">Christmas is the celebration of Jesus coming into the world. Whether you’ve been part of our church family for years or haven’t been to church in a long time, you’re warmly welcome to join us this Christmas.</p>
+              <div className="christmas-actions">
+                <Link className="button button-gold" to="/events">See what’s on this Christmas <ArrowRight size={16} /></Link>
+                <Link className="button button-snow" to="/plan-your-visit">Plan your visit</Link>
+              </div>
+            </div>
+          </div>
+          <div className="hero-links mobile-hero-links" aria-label="Quick links">
+            <a className="hero-link" href="https://www.youtube.com/@GLENMACHANdotORG" target="_blank" rel="noreferrer"><Youtube size={15} /> <span>Watch online</span></a>
+            <a className="hero-link" href="#contact"><HeartHandshake size={15} /> <span>Request prayer</span></a>
+            <a className="hero-link" href="https://www.facebook.com/glenmachan.church" target="_blank" rel="noreferrer"><Facebook size={15} /> <span>Facebook</span></a>
+          </div>
+        </section>
+        ) : (
         <section className="hero" aria-labelledby="hero-title">
           <div className="hero-image" style={{ backgroundImage: `linear-gradient(90deg, rgba(8,26,38,.8), rgba(10,35,48,.34) 58%, rgba(8,26,38,.23)), url(${aerialImg})` }} />
           <div className="hero-glow" />
@@ -66,6 +100,7 @@ export default function Home() {
           </div>
           <div className="scroll-note desktop-scroll-note"><span /> Scroll to explore</div>
         </section>
+        )}
 
         {/* WHAT'S ON banner: a slim link to the events page (src/pages/Events.tsx).
             The events themselves are listed in src/data/promo.ts. */}
